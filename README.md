@@ -6,7 +6,7 @@ The code in this project follows this Udemy course:
 
 https://www.udemy.com/testing-angular-apps/
 
-NOTE: the source code provided with this course was written for a much older version of Angular (version 2?).
+*NOTE: the source code provided with this course was written for a much older version of Angular (version 2?).*
 The source code in this project was updated to use the most recent version of Angular (currently 7) and the necessary dependencies.
 If you have trouble running the code in future version, it might be simpler to create a new Angular project,
 copy everything in the `src/app` folder into the new project, and update references and dependencies where necessary.
