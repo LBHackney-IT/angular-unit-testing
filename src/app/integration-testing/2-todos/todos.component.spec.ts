@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -31,21 +31,25 @@ describe('TodosComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should load todos from the server', () => {
+	it('should load todos from the server', fakeAsync(() => {
+		// async() or fakeAsync() should be used when dealing with Promises in tests.
+		
 		// Obtain a reference to the service.
 		let service = TestBed.get(TodoService);
 		// This works if the service is provided (in providers[]) at the module level. These services are singletons.
-		
+				
 		// For a service instance specific to a component, the service should be provided at the component level.
 		// fixture.debugElement.injector.get(TodoService)
 		
 		let todos = [1, 2, 3];
-		spyOn(service, 'getTodos').and.returnValue(of(todos));
+		spyOn(service, 'getTodosPromise').and.returnValue(Promise.resolve(todos));
 		
 		// We wanted to set the spy on getTodos before updating the component.
 		fixture.detectChanges();
 		
+		tick(); // simulates the passage of time.
+		
 		expect(component.todos.length).toBe(todos.length);
-	});
+	}));
 	
 });
