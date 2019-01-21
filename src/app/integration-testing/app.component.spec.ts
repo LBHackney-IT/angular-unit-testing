@@ -6,6 +6,7 @@ import { DebugElement } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -16,7 +17,7 @@ describe('AppComponent', () => {
 		imports: [
 			RouterTestingModule.withRoutes([])
 		],
-		declarations: [ AppComponent ]
+		declarations: [ AppComponent, NavComponent ]
     })
     .compileComponents();
   }));
@@ -34,17 +35,5 @@ describe('AppComponent', () => {
 	  
 	  expect(de).not.toBeNull();
   });
-  
-  it('should have a link to todos page', () => {
-	  // Testing for a specific router link.
-	  
-	  let debugElements = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-		// all instances of the routerLink directive, because a matching one isn't necessarily
-		// the first instance.
-		
-	  let index = debugElements.findIndex(de => de.properties['href'] === '/todos');
-	  // NOT attributes!
-	  
-	  expect(index).toBeGreaterThan(-1);
-  });
+
 });
