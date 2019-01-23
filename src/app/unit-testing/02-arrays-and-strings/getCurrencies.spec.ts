@@ -12,6 +12,8 @@ describe('getCurrencies', () => {
 		expect(result).toContain('USD');
 		expect(result).toContain('AUD');
 		expect(result).toContain('EUR');
+		
+		expect(result).not.toContain('GBP');
 	});
 	
 });

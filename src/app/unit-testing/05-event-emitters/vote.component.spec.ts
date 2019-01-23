@@ -1,5 +1,7 @@
 import { VoteComponent } from './vote.component'; 
 
+// Unit testing a component's emitted event.
+
 describe('VoteComponent', () => {
   var component: VoteComponent; 
 

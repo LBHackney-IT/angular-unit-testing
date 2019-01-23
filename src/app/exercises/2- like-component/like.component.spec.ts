@@ -1,5 +1,7 @@
 import { LikeComponent } from './like.component';
 
+// Unit testing a component with user interaction.
+
 describe('LikeComponent', () => {
     let component: LikeComponent;
 

@@ -2,22 +2,25 @@ import { VoteComponent } from './vote.component';
 
 describe('VoteComponent', () => {
 	// How to structure a test...
+	// - Arrange (set up components, services, functions etc.)
+	// - Act     (perform actions to test)
+	// - Assert  (check what we want to happen/not happen).
 	  
 	// Arrange
 	let component: VoteComponent;
 	
-	// (before all tests)
+	// This callback is executed before all tests.
 	beforeAll(() => {});
 
-	// (before each test)
+	// This callback is executed before each test.
 	beforeEach(() => {
 		component = new VoteComponent();
 	});
 	
-	// (after each test)
+	// This callback is executed after each test.
 	afterEach(() => {});
 	
-	// (after all tests)
+	// This callback is executed after all tests.
 	afterAll(() => {});
 
 	it('should increment total votes when upvoted', () => {
@@ -28,10 +31,12 @@ describe('VoteComponent', () => {
 		expect(component.totalVotes).toBe(1);
 	});
   
-  it('should decrement total votes when downvoted', () => {  
-	  component.downVote();
-	 
-	  expect(component.totalVotes).toBe(-1);
-  });
+	it('should decrement total votes when downvoted', () => {  
+		// Act
+		component.downVote();
+	
+		// Assert
+		expect(component.totalVotes).toBe(-1);
+	});
 
 });

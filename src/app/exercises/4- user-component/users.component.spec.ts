@@ -2,6 +2,8 @@ import { UsersComponent } from './users.component';
 import { UserService } from './user.service'; 
 import { Observable, from, empty, throwError } from 'rxjs';
 
+// Unit testing a component that makes use of a service.
+
 describe('UsersComponent', () => {
   let component: UsersComponent; 
   let service: UserService; 

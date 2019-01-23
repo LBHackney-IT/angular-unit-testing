@@ -2,6 +2,8 @@ import { TodosComponent } from './todos.component';
 import { TodoService } from './todo.service'; 
 import { from, of, empty, throwError } from 'rxjs';
 
+// Unit testing a component's use of a service.
+
 describe('TodosComponent', () => {
   let component: TodosComponent;
   let service: TodoService;
@@ -42,7 +44,8 @@ describe('TodosComponent', () => {
 	  let spy = spyOn(service, 'add').and.returnValue(
 		from([ todo ])
 	  );
-	  // We're using 'from' rather than 'of' in the above spy: see https://stackoverflow.com/a/46093191/4073160
+	  // We're using 'from' rather than 'of' in the above spy:
+	  // see https://stackoverflow.com/a/46093191/4073160
 	  
 	  component.add();
 	  

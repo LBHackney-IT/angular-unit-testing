@@ -1,5 +1,7 @@
 import { TextSummaryPipe } from './text-summary.pipe';
 
+// Unit testing a pipe.
+
 describe('TextSummaryPipe', () => {
   let pipe: TextSummaryPipe;
 
